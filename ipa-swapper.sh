@@ -147,11 +147,11 @@ for x in $buid; do
 		pattern='group.'"$x"'.shared.plist'
 		directory="$dir"/mobile/Containers/Shared/AppGroup/
 	fi
-		tmp_var=$($ssh_cmd "find '$directory' -name '$pattern'")
+		tmp_var=$($ssh_cmd "find '$directory' -name '$pattern'" | tr -d '\n')
 	if [ "$tmp_var" != '' ]; then
-		result+=$(echo "$tmp_var" | awk -F 'Library/' '{print $1}' | sed 's/$/ /')
+		result+=$(printf "$tmp_var" | awk -F 'Library/' '{print $1}' | sed 's/$/ /')
 	elif [ "$tmp_var" = '' ]; then
-		result+=$(echo 'notfound ')
+		result+=$(printf 'notfound ')
 	fi
 done
 
