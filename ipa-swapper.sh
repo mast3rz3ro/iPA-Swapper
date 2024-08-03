@@ -105,7 +105,7 @@ fi
 
 		# single mode
 if [ "$stage" = '1' ]; then
-		tmp_var=$(echo "$buid" | tr ' ' '\n' | grep -n "$target_buid" | awk -F ':' '{print $1}') # get line number for ipa
+		tmp_var=$(echo "$buid" | tr ' ' '\n' | grep -wnF "$target_buid" | awk -F ':' '{print $1}') # get line number for ipa
 		ipa_list=$(echo "$ipa_list" | tr ' ' '\n' | sed -n "$tmp_var"p) # get ipa path by line number
 		tmp_var=$(echo "$buid" | tr ' ' '\n' | grep -o "$target_buid" | sed -n 1p)
 	if [ "$tmp_var" = "$target_buid" ]; then
