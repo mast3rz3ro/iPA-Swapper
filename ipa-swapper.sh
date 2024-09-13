@@ -5,7 +5,8 @@
 #                                                                                                                       #
 # Script Name: iPA Swapper                                                                                              #
 # Description: Backup & restore iPA data, dump iPA and repack it into their original state, swap linked AppleID in iPA. #
-# MIT License Copyright (c) 2024 mast3rz3ro                                                                             #
+# License: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1                                                                #
+# Copyright (c) 2024 mast3rz3ro                                                                                         #
 #                                                                                                                       #
 #                                                                                                                       #
 #########################################################################################################################
